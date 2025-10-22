@@ -11,6 +11,9 @@ Dialog::Dialog(QWidget *parent)
     filePushButton  = new QPushButton(QStringLiteral("檔案對話盒"));
     fontPushButton  = new QPushButton(QStringLiteral("字體對話盒"));
     inputPushButton = new QPushButton(QStringLiteral("輸入對話盒"));
+    pagePushButton  = new QPushButton(QStringLiteral("頁面設定對話盒"));
+    progressButton  = new QPushButton(QStringLiteral("進度對話盒"));
+    printPushButton = new QPushButton(QStringLiteral("列印對話盒"));
 }
 
 Dialog::~Dialog() {}
