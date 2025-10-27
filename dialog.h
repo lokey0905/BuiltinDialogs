@@ -23,5 +23,11 @@ private:
     QPushButton *pagePushButton;
     QPushButton *progressButton;
     QPushButton *printPushButton;
+    QPushButton *fontColorPushButton;
+
+private slots:
+    void doPushBtn();
+    void DoTextColor();
+
 };
 #endif // DIALOG_H
