@@ -14,6 +14,21 @@ Dialog::Dialog(QWidget *parent)
     pagePushButton  = new QPushButton(QStringLiteral("頁面設定對話盒"));
     progressButton  = new QPushButton(QStringLiteral("進度對話盒"));
     printPushButton = new QPushButton(QStringLiteral("列印對話盒"));
+
+    gridLayout->addWidget(colorPushButton,0,0,1,1);
+    gridLayout->addWidget(errorPushButton,0,1,1,1);
+    gridLayout->addWidget(filePushButton,0,2,1,1);
+    gridLayout->addWidget(fontPushButton,1,0,1,1);
+    gridLayout->addWidget(inputPushButton,1,1,1,1);
+    gridLayout->addWidget(pagePushButton,1,2,1,1);
+    gridLayout->addWidget(progressButton,2,0,1,1);
+    gridLayout->addWidget(printPushButton,2,1,1,1);
+    gridLayout->addWidget(displayTextEdit,3,0,3,3);
+
+    setLayout(gridLayout);
+    setWindowTitle(tr("內建對話盒展示"));
+    resize(400,400);
+
 }
 
 Dialog::~Dialog() {}
