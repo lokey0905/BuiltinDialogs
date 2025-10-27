@@ -3,6 +3,10 @@
 #include <QDebug>
 #include <QPalette>
 #include <QtWidgets>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPageSetupDialog>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPrintPreviewDialog>
 
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
@@ -122,6 +126,15 @@ void Dialog::doPushBtn(){
         if(ok && !text.isEmpty()) displayTextEdit->setText(text);
     }
 
+    if(btn==pagePushButton){
+        QPrinter printer(QPrinter::HighResolution);
+        QPageSetupDialog* dlg = new QPageSetupDialog(&printer,this);
+        dlg->setWindowTitle(tr("頁面設定話方塊"));
+        if(dlg->exec()==QDialog::Accepted){
+
+        }
+    }
+
     if(btn==progressButton){
         QProgressDialog progress(tr("正在複製檔案"),
                                  tr("取消"),
@@ -139,5 +152,11 @@ void Dialog::doPushBtn(){
         }
         //_sleep(10000);
 
+    }
+
+    if(btn==printPushButton){
+        QPrinter printer(QPrinter::HighResolution);
+        QPrintDialog dialog(&printer, this);
+        if(dialog.exec()!=QDialog::Accepted) return;
     }
 }

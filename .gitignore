@@ -82,3 +82,5 @@ CMakeLists.txt.user*
 /build*/
 /.qtc_clangd/
 /.qtc_clangd
+/.qtc_clangd/*
+.qtc_clangd/compile_commands.json
